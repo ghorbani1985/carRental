@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سامانه  اجاره  روزانه خودرو</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body class="bg-slate-800">
+    <main class="container flex flex-col justify-center items-center my-7 gap-y-4">
+      <!-- Header Section -->
+      <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-6 rounded-lg w-full flex items-center justify-center border-2 border-gray-200 borer-solid">
+       <div class="self-start">
+          <img src="../assets/images/letLogo.png" class="w-10 h-10" alt="letLogo">
+       </div>
+        <div class="flex flex-1 justify-center items-center">
+          <p class="font-bold text-xs md:text-lg text-center">سامانه اجاره روزانه خودرو</p>
+        </div>
+      </header>
+      <!-- Date Section -->
+      <p id="dateNow" class="font-bold text-lg text-white"></p>
+      <!-- Car Rent Table -->
+      <div class="w-full flex justify-center items-center my-3 before:h-[3px] before:w-40 before:rounded before:content-[''] before:bg-orange-500 before:flex before:ml-2 after:h-[3px] after:w-40 after:rounded after:content-[''] after:bg-orange-500 after:flex after:mr-2">
+          <h2 class="text-white text-sm text-center leading-6 md:text-base lg:text-lg text-bold ">خودرو مورد نظر خود برای اجاره را انتخاب نمایید</h2>
+      </div>
+        <section class="w-full grid grid-cols-1 grid-row-2 md:grid-cols-2 md:content-between lg:grid-cols-4 gap-8">
+     <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+        <a onclick="selectCarName('BmwI8',this)" class="w-full flex flex-col items-center cursor-cell">
+          <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+            BMW I8 Model: 2015
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/bmw-i8.jpeg" alt="bmw-i8" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 10,000,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('BmwX6',this)" class="w-full flex flex-col items-center cursor-cell">
+         <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+           BMW X6 Model: 2012
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/bmw-x6.jpeg" alt="bmw-x6" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 3,500,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+        <a onclick="selectCarName('Bmw528',this)" class="w-full flex flex-col items-center cursor-cell">
+          <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+            BMW 528 Model: 2013
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/bmw-528.jpeg" alt="bmw-528" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 2,500,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('BenzE350',this)" class="w-full flex flex-col items-center cursor-cell">
+         <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+           BENZ E350 Model: 2014
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/benz-E350.jpeg" alt="benz-E350" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 2,600,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('Toyota4Doors',this)" class="w-full flex flex-col items-center cursor-cell">
+         <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+           TOYOTA 4 Doors Model: 2015
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/prado-4x.jpeg" alt="prado-4x" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 3,500,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('Porsche911',this)" class="w-full flex flex-col items-center cursor-cell">
+         <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+           PORSCHE 911 Model: 2012
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/porsche-911.jpeg" alt="porsche-911" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 5,000,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('PorscheBoxster',this)" class="w-full flex flex-col items-center cursor-cell">
+         <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+           PORSCHE Boxster Model: 2014
+          </h2>
+          <div class="-mt-4 mb-4">
+            <img src="../assets/images/porsche-boxster.jpeg" alt="porsche-boxster" class="rounded-[50%] border-2 border-gray-300 border-solid">
+          </div>
+          <p class="text-orange-500 font-bold mb-4">اجاره خودرو 2,500,000 تومان</p>
+        </a>
+      </div>
+      <div class="flex flex-col items-center rounded-lg border-2 border-gray-200 borer-solid transition-all duration-500">
+       <a onclick="selectCarName('BenzCls',this)" class="w-full flex flex-col items-center cursor-cell">
+        <h2 class="bg-gradient-to-r from-cyan-700 to-blue-400 text-white text-center font-['Vazir'] text-base h-28 max-h-28 w-full px-5 py-10 rounded-tr-lg rounded-tl-lg">
+         BENZ CLS Model: 2010
+        </h2>
+        <div class="-mt-4 mb-4">
+          <img src="../assets/images/benz-cls.jpeg" alt="benz-cls" class="rounded-[50%] border-2 border-gray-300 border-solid">
+        </div>
+        <p class="text-orange-500 font-bold mb-4">اجاره خودرو 2,600,000 تومان</p>
+       </a>
+     </div>
+    </section>
+    <!-- White Line -->
+    <p id="whiteLine" class="w-full h-px bg-white my-4 hidden"></p>
+    <!-- Info Section -->
+       <div class="flex flex-col items-center md:justify-between w-full gap-8">
+           <!-- Calculation of rental costs Section -->
+          <section id="calcSection" class="w-3/4 hidden">
+           <form onsubmit="return false" id="calcSectionForms">
+    <fieldset class="border-2 border-solid border-white rounded-lg p-3">
+      <legend class="text-white font-bold px-2 text-center">محاسبه هزینه اجاره خودرو</legend>
+      <label for="dayNum" class="text-white">تعداد روز</label>
+        <input type="number" id="dayNum" name="dayNum" class="my-2" placeholder="لطفا تعداد روز اجاره را وارد نمایید" />
+       <div class="w-full flex justify-center items-center my-3">
+         <button type="submit" onclick="calcCost()" id="costBtn" name="costBtn" class="bg-orange-500 text-white text-lg rounded-md px-4 py-2 hover:bg-white hover:text-orange-500 hover:border-2 hover:border-solid hover:border-orange-500 transition-all duration-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+        </svg> محاسبه هزینه</button>
+       </div>
+      <label for="cost" class="text-white">هزینه</label>
+      <input type="text" id="costResult" name="costResult" readonly disabled class="my-4 text-center font-bold text-white text-lg"/>
+    </fieldset>
+  </form>
+        </section>
+        <!-- Personal Info -->
+          <section id="infoSection" class="w-3/4 hidden">
+           <form onsubmit="return false">
+    <fieldset class="border-2 border-solid border-white rounded-lg p-3">
+      <legend class="text-white font-bold px-2 text-center">اطلاعات اجاره کننده خودرو</legend>
+      <label for="fname" class="text-white">نام</label>
+      <input type="text" id="fname" name="fname" class="my-2" placeholder="لطفا نام خود را وارد نمایید" />
+      <label for="lname" class="text-white">نام خانوادگی</label>
+      <input type="text" id="lname" name="lname" class="my-2" placeholder="لطفا نام خانوادگی را وارد نمایید" />
+      <label for="phone" class="text-white">شماره همراه</label>
+      <input type="text" id="phone" name="phone" class="my-2" placeholder="لطفا شماره همراه خود را وارد نمایید" />
+        <div class="w-full flex justify-center items-center my-3">
+          <button type="submit" onclick="submitRent()" id="rentBtn" name="rentBtn" class="bg-orange-500 text-white text-lg rounded-md px-4 py-2 hover:bg-white hover:text-orange-500 hover:border-2 hover:border-solid hover:border-orange-500 transition-all duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+</svg>
+     اجاره خودرو</button>
+        </div>
+    </fieldset>
+  </form>
+        </section>
+       </div>
+       <!-- Result Section -->
+      <div id="resultSection" class="hidden font-bold text-green-500 leading-9 rounded-lg border-2 border-solid border-white p-3 text-center">
+        <h3 class="mb-5">کاربر گرامی 
+          <span id="showFullName" class="text-xl text-white"></span>
+          اطلاعات شما با موفقیت ثبت گردید.</h3>
+        <h4>تا ۲ ساعات آینده خودرو را درب منزل تحویل بگیرید و مدارک مورد نیاز را ارائه دهید.</h4>
+      </div>
+    </main>
+    <script src="../src/js/carRental.js"></script>
+  </body>
+</html>
