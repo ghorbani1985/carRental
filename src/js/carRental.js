@@ -30,26 +30,27 @@ function selectCarName(name, ele) {
   selectedCar = name;
   selectedCarParentEle = ele.parentElement;
   selectedCarEle = ele;
-  const selectedList = document.getElementsByClassName("border-red-500");
+  const selectedList = document.getElementsByClassName("border-green-500");
   const selectedListMarginTop = document.getElementsByClassName("-mt-2");
-  for(let index =0; index < selectedList.length; index++){//for one car border change
-      selectedList[index].classList.remove('border-red-500');
+  for(let index =0; index < selectedList.length; index++){//car selected border change color
+      selectedList[index].classList.remove('border-green-500', 'border-4');
       selectedListMarginTop[index].classList.remove('-mt-2');
   }
-  ele.parentElement.classList.add('border-red-500','-mt-2');
+  ele.parentElement.classList.add('border-green-500', 'border-4' , '-mt-2');
    whiteLine.classList.remove('hidden');
    calcSection.classList.remove('hidden');
    infoSection.classList.remove('hidden'); 
 };
 function calcCost(){
-    const dayNum = document.getElementById('dayNum').value;
-    const costResult = document.getElementById('costResult');
-    const price = carsCost.get(selectedCar);
-    if(dayNum == "" || dayNum <=0 || dayNum > 365){
-        alert("روز وارد شده اشتباه است");
-        return;
-    }
-    costResult.value= price * dayNum + " تومان ";
+  const dayNum =  persionToEnNumber(document.getElementById('dayNum').value);
+  const costResult = document.getElementById('costResult');
+  const price = carsCost.get(selectedCar);
+  
+  if(dayNum == "" || dayNum <=0 || dayNum > 365){
+    alert("روز وارد شده اشتباه است");
+    return;
+  }
+  costResult.value= Number(price * dayNum) + " تومان ";
 };
 function submitRent() {
   const fname = document.getElementById('fname').value;
@@ -73,42 +74,13 @@ function submitRent() {
   calcSectionForms.reset();
 }
 
-
-
-
-
-/* carLinks.onclick = function carList(item) {
-
-}; */
-
-
- /*  console.log('element = ' + element, 'index = ' + index, 'array = ' + array); */
-
-
-/* costBtn.onclick = function(){
-
- costResult.value = 3500000 * dayNum + " تومان ";
-} */
-/* rentBtn.onclick = function(){
- const fname = document.getElementById('fname').value;
- const lname = document.getElementById('lname').value;
- const phone = document.getElementById('phone').value;
- const showFullName = document.getElementById('showFullName');
- const resultSection = document.getElementById('resultSection');
- resultSection.classList.remove('hidden');
- showFullName.innerText = fname + " " + lname;
- whiteLine.classList.add('hidden');
- calcSection.classList.add('hidden');
- infoSection.classList.add('hidden');
-carLinks.classList.remove('cursor-cell');
-carLinks.classList.add('grayscale', 'pointer-events-none');
-
-} */
-
-
-
-
-
-
-//grayscale cursor-not-allowed
-
+let persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g],
+  englishNumbers = [/0/g, /1/g, /2/g, /3/g, /4/g, /5/g, /6/g, /7/g, /8/g, /9/g],
+  persionToEnNumber = function (str) {
+    if (typeof str === 'string') {
+      for (let i = 0; i < 10; i++) {
+        str = str.replace(persianNumbers[i], i).replace(englishNumbers[i], i);
+      }
+    }
+    return str;
+  }
